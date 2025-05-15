@@ -1,0 +1,7 @@
+format_version: "2.0"
+input_files:
+- ../../../benchmarks/SOCS17/Blocks-DEADENDS-MOVABILITY/domain.pddl
+- ../../../benchmarks/SOCS17/Blocks-DEADENDS-MOVABILITY/RND3-23/pfile14-problem.pddl
+
+options:
+    output: SOCS17/Blocks-DEADENDS-MOVABILITY/RND3-23/pfile14-problem

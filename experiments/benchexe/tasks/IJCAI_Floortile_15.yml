@@ -1,0 +1,7 @@
+format_version: "2.0"
+input_files:
+- ../../../benchmarks/IJCAI17-Trapper/Floortile/domain.pddl
+- ../../../benchmarks/IJCAI17-Trapper/Floortile/prob15_problem.pddl
+
+options:
+    output: IJCAI17-Trapper/Floortile/prob15_problem

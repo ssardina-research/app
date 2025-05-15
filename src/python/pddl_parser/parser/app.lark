@@ -1,0 +1,47 @@
+// this defines the grammar of an APP and reuses a lot from problem grammar in pddl
+// to re-use use merge the ProblemTransformer into the APPTransformer using merge_transforemer()
+//  https://lark-parser.readthedocs.io/en/stable/visitors.html#merge-transformers
+//  example: https://github.com/lark-parser/lark/tree/master/examples/composition
+start: app
+
+// We overrride the problem grammar from the original pddl package
+// we used to extend but this means we accept boths, which is not the case: we do not use planning problems
+app:        LPAR DEFINE app_problem_def problem__problem_domain [problem__objects] problem__init init_app transitions RPAR
+
+// APP specific
+app_problem_def:        LPAR APP_PROBLEM NAME RPAR
+init_app:               LPAR INIT_APP NAME RPAR
+transitions:            LPAR TRANSITIONS transition+ RPAR
+transition:             LPAR source target problem__goal RPAR
+source: NAME
+target: NAME
+INIT_APP:               ":init-app"
+TRANSITIONS:            ":transitions"
+APP_PROBLEM:            "planprog"
+
+// %ignore WS
+%ignore /\s+/
+// %ignore COMMENT
+%ignore /;[^\n]*/
+
+// Renaming of each import variable is required with <namespace>__ prefix where
+// <<namespace>> is the name of namespace used in the merge_transformer() call:
+//
+// so, goal in problem grammar, will become problem__goal here.
+// function problem__goal(self, children) will be added automatically as a copy of goal() in problem by:
+//
+// self._transformer = lark.visitors.merge_transformers(APPTransformer(), problem=ProblemTransformer())
+//
+// then, e.g., when a goal is processed, the transformer will look for a method called problem__goal in
+// the base transformer APPTransformer, which will exist
+%import problem.problem_domain -> problem__problem_domain
+%import problem.objects -> problem__objects
+%import problem.init -> problem__init
+%import problem.goal -> problem__goal
+
+%import common.NAME -> NAME
+%import common.DEFINE -> DEFINE
+%import common.LPAR -> LPAR
+%import common.RPAR -> RPAR
+%import common.COMMENT -> COMMENT
+%import common.WS -> WS

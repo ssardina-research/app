@@ -1,0 +1,7 @@
+format_version: "2.0"
+input_files:
+- ../../../benchmarks/FOND/BlocksWorld/domain.pddl
+- ../../../benchmarks/FOND/BlocksWorld/SCC2-20/prob019.pddl
+
+options:
+    output: FOND/BlocksWorld/SCC2-20/prob019

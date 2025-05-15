@@ -1,0 +1,7 @@
+format_version: "2.0"
+input_files:
+- ../../../benchmarks/SOCS17/ZenoTravel-DEADENDS-SIMPLE-REFUEL/domain.pddl
+- ../../../benchmarks/SOCS17/ZenoTravel-DEADENDS-SIMPLE-REFUEL/EIGHT50/pfile2-problem.pddl
+
+options:
+    output: SOCS17/ZenoTravel-DEADENDS-SIMPLE-REFUEL/EIGHT50/pfile2-problem

@@ -1,0 +1,26 @@
+(define
+(planprog RING2BW-PFILE10)
+(:domain blocksworld)
+(:objects b1 b2 )
+(:init
+(arm-empty)
+(on-table b1)
+(on-table b2)
+(clear b1)
+(clear b2)
+
+)
+(:init-app n0)
+(:transitions
+(n0 n1 (:goal (and (on-table b1) )))
+(n1 n2 (:goal (and (clear b1) )))
+(n2 n3 (:goal (and (on-table b1) (on-table b2)) ))
+(n3 n4 (:goal (and (on b1 b2) )))
+(n4 n5 (:goal (and (holding b1) )))
+(n5 n6 (:goal (and (on-table b1) )))
+(n6 n7 (:goal (and (clear b1) )))
+(n7 n8 (:goal (and (on-table b1) (on-table b2)) ))
+(n8 n9 (:goal (and (on b2 b1) )))
+(n9 n0 (:goal (and (holding b2) )))
+)
+)

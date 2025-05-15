@@ -1,0 +1,126 @@
+(define
+    (planprog EIGHT4-51-PFILE19)
+    (:domain blocksworld)
+    (:objects
+        b1 b2
+    )
+    (:init
+        (arm-empty)
+        (on b1 b2)
+        (on-table b2)
+        (clear b1)
+        
+    )
+    (:init-app n0
+    )
+    (:transitions
+        (n0 n1
+            (:goal
+                (and (on-table b1) (on-table b2))))
+        (n1 n2
+            (:goal
+                (and (clear b1))))
+        (n2 n3
+            (:goal
+                (and (holding b2))))
+        (n3 n4
+            (:goal
+                (and (on b1 b2))))
+        (n4 n5
+            (:goal
+                (and (arm-empty))))
+        (n5 n6
+            (:goal
+                (and (clear b1) (clear b2))))
+        (n6 n7
+            (:goal
+                (and (clear b1) (clear b2))))
+        (n7 n8
+            (:goal
+                (and (clear b2))))
+        (n8 n9
+            (:goal
+                (and (on b2 b1))))
+        (n9 n10
+            (:goal
+                (and (holding b2))))
+        (n10 n11
+            (:goal
+                (and (clear b1))))
+        (n11 n12
+            (:goal
+                (and (on-table b2))))
+        (n12 n13
+            (:goal
+                (and (on-table b1) (on-table b2))))
+        (n13 n14
+            (:goal
+                (and (on-table b1))))
+        (n14 n15
+            (:goal
+                (and (on b1 b2))))
+        (n15 n16
+            (:goal
+                (and (on-table b1) (on-table b2))))
+        (n16 n17
+            (:goal
+                (and (on-table b1) (on-table b2))))
+        (n17 n18
+            (:goal
+                (and (clear b2))))
+        (n18 n17
+            (:goal
+                (and (holding b1))))
+        (n17 n16
+            (:goal
+                (and (on b1 b2))))
+        (n16 n15
+            (:goal
+                (and (on-table b1))))
+        (n15 n14
+            (:goal
+                (and (holding b2))))
+        (n14 n13
+            (:goal
+                (and (arm-empty))))
+        (n13 n12
+            (:goal
+                (and (clear b1))))
+        (n12 n11
+            (:goal
+                (and (on-table b2))))
+        (n11 n10
+            (:goal
+                (and (holding b1))))
+        (n10 n9
+            (:goal
+                (and (clear b2))))
+        (n9 n8
+            (:goal
+                (and (on-table b1) (on-table b2))))
+        (n8 n7
+            (:goal
+                (and (clear b2))))
+        (n7 n6
+            (:goal
+                (and (on-table b1))))
+        (n6 n5
+            (:goal
+                (and (on b1 b2))))
+        (n5 n4
+            (:goal
+                (and (holding b2))))
+        (n4 n3
+            (:goal
+                (and (arm-empty))))
+        (n3 n2
+            (:goal
+                (and (clear b2))))
+        (n2 n1
+            (:goal
+                (and (clear b2))))
+        (n1 n0
+            (:goal
+                (and (on b1 b2))))
+    )
+)

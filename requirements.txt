@@ -1,0 +1,17 @@
+async-timeout==5.0.1
+click==8.2.0
+coloredlogs==15.0.1
+graphviz==0.20.3
+humanfriendly==10.0
+lark==1.1.9
+markdown-it-py==3.0.0
+mdurl==0.1.2
+networkit==11.1
+numpy==2.2.5
+pddl==0.4.3
+ply==3.11
+psutil==7.0.0
+py-cpuinfo==9.0.0
+Pygments==2.19.1
+rich==14.0.0
+scipy==1.15.3

@@ -1,0 +1,26 @@
+(define
+(planprog Degree10-110-PFILE10)
+(:domain blocksworld)
+(:objects b1 b2 )
+(:init
+(arm-empty)
+(on b1 b2)
+(on-table b2)
+(clear b1)
+
+)
+(:init-app n0)
+(:transitions
+(n0 n1 (:goal (on-table b1) ))
+(n1 n2 (:goal (and (clear b1) (clear b2)) ))
+(n2 n3 (:goal (arm-empty) ))
+(n3 n4 (:goal (clear b1) ))
+(n4 n5 (:goal (arm-empty) ))
+(n5 n6 (:goal (and (on-table b1) (on-table b2)) ))
+(n6 n7 (:goal (on b2 b1) ))
+(n7 n8 (:goal (on b2 b1) ))
+(n8 n9 (:goal (on-table b1) ))
+(n9 n10 (:goal (on-table b1) ))
+(n10 n10 (:goal ))
+)
+)
