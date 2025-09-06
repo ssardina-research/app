@@ -88,49 +88,49 @@ $ python ./src/python/pp-fond.py ./benchmarks/AIJ16/BlocksWorld/domain.pddl ./be
 .
 .
 .
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]             -----------------------------------
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]                   { General Statistics }
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]             -----------------------------------
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]                          Time taken: 0.00317824 sec
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]                            # Rounds: 1
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]                     # Weak Searches: 9
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]                       Solution Size: 24
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]                           FSAP Size: 0
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]                        Poison Count: 0
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] -------------------------------------------------------------------
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] Running the simulation...
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]             --------------------------------------
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]                   { Simulation Statistics }
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]             --------------------------------------
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]                           Trials: 100
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]                            Depth: 1000
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]                          Success: 100        (100.00 %)
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]                         Failures: 0  (0.00 %)
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]  Failures due to unhandled state: 0  (nan %)
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]      Failures due to depth limit: 0  (nan %)
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]       Mean successful run length: 6.13
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]   Mean (state-)failed run length: 0.00
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] -------------------------------------------------------------------
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] Dumping the policy and fsaps...
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] Peak memory: 410099632 KB
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] Command '['/Users/nitiny/Tools/Planners/prp2/pr2/builds/release64/bin/downward', '--search', 'prpsearch()', '--internal-plan-file', 'sas_plan']' returned non-zero exit status 9.
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [INFO] Found a policy of size: 24
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [INFO] FOND Solve Time: 0.2639072500169277
-2025-05-15 13:43:52 3330L-212245-M __main__[56338] INFO Time taken (wall): 0.3503777500009164.
+2025-05-15 13:43:52  APP-PR2 [SOLVER]
+2025-05-15 13:43:52  APP-PR2 [SOLVER]
+2025-05-15 13:43:52  APP-PR2 [SOLVER]             -----------------------------------
+2025-05-15 13:43:52  APP-PR2 [SOLVER]                   { General Statistics }
+2025-05-15 13:43:52  APP-PR2 [SOLVER]             -----------------------------------
+2025-05-15 13:43:52  APP-PR2 [SOLVER]
+2025-05-15 13:43:52  APP-PR2 [SOLVER]                          Time taken: 0.00317824 sec
+2025-05-15 13:43:52  APP-PR2 [SOLVER]                            # Rounds: 1
+2025-05-15 13:43:52  APP-PR2 [SOLVER]                     # Weak Searches: 9
+2025-05-15 13:43:52  APP-PR2 [SOLVER]                       Solution Size: 24
+2025-05-15 13:43:52  APP-PR2 [SOLVER]                           FSAP Size: 0
+2025-05-15 13:43:52  APP-PR2 [SOLVER]                        Poison Count: 0
+2025-05-15 13:43:52  APP-PR2 [SOLVER]
+2025-05-15 13:43:52  APP-PR2 [SOLVER] -------------------------------------------------------------------
+2025-05-15 13:43:52  APP-PR2 [SOLVER]
+2025-05-15 13:43:52  APP-PR2 [SOLVER]
+2025-05-15 13:43:52  APP-PR2 [SOLVER] Running the simulation...
+2025-05-15 13:43:52  APP-PR2 [SOLVER]
+2025-05-15 13:43:52  APP-PR2 [SOLVER]             --------------------------------------
+2025-05-15 13:43:52  APP-PR2 [SOLVER]                   { Simulation Statistics }
+2025-05-15 13:43:52  APP-PR2 [SOLVER]             --------------------------------------
+2025-05-15 13:43:52  APP-PR2 [SOLVER]
+2025-05-15 13:43:52  APP-PR2 [SOLVER]                           Trials: 100
+2025-05-15 13:43:52  APP-PR2 [SOLVER]                            Depth: 1000
+2025-05-15 13:43:52  APP-PR2 [SOLVER]                          Success: 100        (100.00 %)
+2025-05-15 13:43:52  APP-PR2 [SOLVER]                         Failures: 0  (0.00 %)
+2025-05-15 13:43:52  APP-PR2 [SOLVER]
+2025-05-15 13:43:52  APP-PR2 [SOLVER]  Failures due to unhandled state: 0  (nan %)
+2025-05-15 13:43:52  APP-PR2 [SOLVER]      Failures due to depth limit: 0  (nan %)
+2025-05-15 13:43:52  APP-PR2 [SOLVER]
+2025-05-15 13:43:52  APP-PR2 [SOLVER]       Mean successful run length: 6.13
+2025-05-15 13:43:52  APP-PR2 [SOLVER]   Mean (state-)failed run length: 0.00
+2025-05-15 13:43:52  APP-PR2 [SOLVER]
+2025-05-15 13:43:52  APP-PR2 [SOLVER] -------------------------------------------------------------------
+2025-05-15 13:43:52  APP-PR2 [SOLVER]
+2025-05-15 13:43:52  APP-PR2 [SOLVER] Dumping the policy and fsaps...
+2025-05-15 13:43:52  APP-PR2 [SOLVER]
+2025-05-15 13:43:52  APP-PR2 [SOLVER] Peak memory: 410099632 KB
+2025-05-15 13:43:52  APP-PR2 [SOLVER] Command '['/Users/nitiny/Tools/Planners/prp2/pr2/builds/release64/bin/downward', '--search', 'prpsearch()', '--internal-plan-file', 'sas_plan']' returned non-zero exit status 9.
+2025-05-15 13:43:52  APP-PR2 [SOLVER]
+2025-05-15 13:43:52  APP-PR2 [INFO] Found a policy of size: 24
+2025-05-15 13:43:52  APP-PR2 [INFO] FOND Solve Time: 0.2639072500169277
+2025-05-15 13:43:52  __main__[56338] INFO Time taken (wall): 0.3503777500009164.
 ```
 
 ## PP-LPG: APPs via Classical Planning
