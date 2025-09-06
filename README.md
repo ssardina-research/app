@@ -83,7 +83,10 @@ The default planner used is PRP, but you can select which one to use via  `--pla
 For example:
 
 ```bash
-$ python ./src/python/pp-fond.py ./benchmarks/AIJ16/BlocksWorld/domain.pddl ./benchmarks/AIJ16/BlocksWorld/RND6/prob001.pddl --planner pr2 --output ./output
+$ python ./src/python/pp-fond.py \
+    ./benchmarks/AIJ16/BlocksWorld/domain.pddl \
+    ./benchmarks/AIJ16/BlocksWorld/RND6/prob001.pddl \
+    --planner pr2 --output ./output
 
 .
 .
