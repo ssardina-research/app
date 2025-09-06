@@ -65,42 +65,21 @@ For example, an APP for the Barman domain is as follows:
 
 This tool provides a high-level interface for solving APPs (Agent Planning Problems) by translating to FOND (Fully Observable Non-Deterministic) problems.
 
-The entry point to the solver is `src/python/pp-fond.py`
+The entry point to the solver is script `src/python/pp-fond.py`. The script will first translate the APP task into a FOND planning problem and call a FOND planner to solve it. Currently, the solver supports the following FOND planners:
 
-### Usage
-Positional Arguments
+- [PRP](https://github.com/QuMuLab/planner-for-relevant-policies) (ICAPS'11): get the improved forked version [here](https://github.com/ssardina-research/planner-for-relevant-policies/).
+- [PR2](https://mulab.ai/project/pr2/) (AAAI'24): the new iteration of PRP.
+- [FOND-SAT](https://github.com/tomasgeffner/FOND-SAT) (ICAPS'18): get the improved forked version [here](https://github.com/ssardina-research/FOND-SAT).
+- [PALADINUS](https://github.com/ramonpereira/paladinus) (ICAPS'22): FOND via iterative depth-first search.
 
-    domain: The domain PDDL file.
+The default planner used is PRP, but you can select which one to use via  `--planner` option: `pr`, `pr2`, `fondsat`, `paladinus`.
 
-    problem: The APP problem file.
+> [!NOTE]
+> The FOND planner needs to be accessible from `PATH`. One way to do this is to have links to their binaries under `bin/` and add `bin/` to `PATH`
 
-Optional Arguments
 
-    --mode: Specifies the functionality of the system. Options are:
+For example:
 
-        translate: Translate APP problem to FOND PDDL.
-
-        solve (default): Solve the APP using a FOND planner.
-
-    --timeout: Timeout per run in seconds. Default is 1800 seconds (30 minutes).
-
-    --planner: Which FOND planner to use. Available options are [prp (default), pr2, fondsat, paladinus]. The binaries for these planners are hardcoded in the code and should be available on the path. The names of the binaries are as below:
-            SOLVER_PRP = "prp"
-            SOLVER_PR2 = "pr2"
-            SOLVER_PALADINUS = "paladinus"
-            SOLVER_FONDSAT = "fondsat"
-
-    --output: Path to a directory where output files should be stored.
-
-    -e, --empty: Clears the output directory before running.
-
-    -q, --quiet: Enables quiet mode with minimal output.
-
-    --planner_args: Additional arguments to be passed directly to the FOND planner.
-
-    --disable_invariant: Disables invariant analysis in the pre-processing phase. This is relevant only for PRP and PR2. We assume a separate binary for the planner that has disabled invariant analysis. These binaries should be called "prp_inv0", and "pr2_inv0" for PRP and PR2, respectively.
-
-### Example
 ```bash
 $ python ./src/python/pp-fond.py ./benchmarks/AIJ16/BlocksWorld/domain.pddl ./benchmarks/AIJ16/BlocksWorld/RND6/prob001.pddl --planner pr2 --output ./output
 
@@ -151,7 +130,10 @@ $ python ./src/python/pp-fond.py ./benchmarks/AIJ16/BlocksWorld/domain.pddl ./be
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [INFO] FOND Solve Time: 0.2639072500169277
 2025-05-15 13:43:52 3330L-212245-M __main__[56338] INFO Time taken (wall): 0.3503777500009164.
 ```
+
+
 ## PP-LPG
+
 This tool provides a high-level interface for working with APP (Agent Planning Problems) using the LPG planner. It supports translating APP problems to a format that the LPG solver accepts, and solving them the LPG planner. The entry point to the solver is `src/python/pp-lpg.py`
 
 ### Usage
