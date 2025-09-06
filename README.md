@@ -1,21 +1,71 @@
 # Agent Planning Programs
 
-This repo has a set of solvers and benchmarking scripts for _Agent Planning Programs_, as reported in:
+Agent Planning Programs (APPs) are generalization of AI planning problems, in which instead of a single goal, the agent needs to solve a network of interconnected goals, the "planning program".
 
-* Nitin Yadav, Sebastian Sardina, Hector Geffner: [{Agent Planning Programs as Non-deterministic Planning under Fairness](https://linkinghub.elsevier.com/retrieve/pii/S0004370215001563). Proceedings of the Interntional Confernece on Automated Planning and Scheduling (2025), Melbourne, AUSTRALIA.
-
-Agent Planning Programs were first introduced at AAMAS'10 and then expanded at AIJ'16:
+Agent Planning Programs were first introduced at AAMAS'10 and then explored more at AIJ'16:
 
 * Giuseppe De Giacomo, Alfonso Emilio Gerevini, Fabio Patrizi, Alessandro Saetti, Sebastian Sardiña: [Agent planning programs](https://linkinghub.elsevier.com/retrieve/pii/S0004370215001563). Artificial Intelligence 231: 64-106 (2016)
 * Giuseppe De Giacomo, Fabio Patrizi, Sebastian Sardiña: [Agent programming via planning programs](https://dl.acm.org/citation.cfm?id=1838276). AAMAS 2010: 491-498
 
-The repo contains two solvers:
+This repo has a set of _solvers_, _benchmarks_, and _scripts_ for APPS, as reported in:
 
-1. [**PP-FOND**](#pp-fond): this solver involves translating an APP problem to a FOND problem under strong-cyclic solution concept.
-2. [**PP-LPG**](#pp-lpg): this solver was introduced in AIJ'16 paper and solves APP by repetitively calling a modified version of classical planner [LPG](http://zeus.ing.unibs.it/lpg/), a local search preference-based planning system, to build a whole solution for the APP task. 
+* Nitin Yadav, Sebastian Sardina, Hector Geffner: [Agent Planning Programs as Non-deterministic Planning under Fairness](https://icaps25.icaps-conference.org/). ICAPS 2025, Melbourne, AUSTRALIA.
 
-## PP-FOND
-This tool provides a high-level interface for working with APP (Agent Planning Problems) using FOND (Fully Observable Non-Deterministic) planners. It supports translating APP problems to PDDL, and solving them with a few FOND planners. The entry point to the solver is `src/python/pp-fond.py`
+Two solvers are provided:
+
+1. [**PP-FOND**](#pp-fond): solves an APP problem by translating it to a  FOND problem under strong-cyclic solution concept. This translation was first reported in ICAPS'25 paper above.
+2. [**PP-LPG**](#pp-lpg): solves an APP by repetitively calling a (modified version of) classical planner [LPG](http://zeus.ing.unibs.it/lpg/), a local search preference-based planning system, to build a whole solution for the APP task. This technique was introduced in the AIJ'16 paper above.
+
+## Benchmarks and APP input format
+
+A set of benchmarks is provided under [benchmarks](benchmarks/). Each set of problems come from different publications. Refer to the [README.md](benchmarks/README.md) in that folder for details.
+
+The problems are given in APP-PDDL format, an extension of PDDL to represent APPs. Domains are exactly as in standard PDDL. The problem file is a variant of a planning problem:
+
+1. It is specified with `planprog` keyword: `(define (planprog prob1)`
+2. The initial state of the APP is denoted with keyword `:init-app`, for example: `(:init-app n0)`
+3. The transitions of the APP are specified under the `:transition` section as a list of terms `(nodefrom nodeto (:goal <condition>))`.
+
+For example, an APP for the Barman domain is as follows:
+
+```lisp
+(define (planprog prob1)
+(:domain barman)
+(:objects
+    shaker1 - shaker
+    left right - hand
+    shot1 - shot
+    ingredient1 ingredient2 ingredient3 ingredient4 - ingredient
+    cocktail1 cocktail2 cocktail3 - cocktail
+    dispenser1 dispenser2 dispenser3 dispenser4 - dispenser
+    l0 l1 l2 - level)
+
+(:init
+    (ontable shaker1)
+    (ontable shot1)
+    (dispenses dispenser1 ingredient1)
+    (dispenses dispenser2 ingredient2)
+    (dispenses dispenser3 ingredient3)
+    ...)
+
+(:init-app n0)
+(:transitions
+	(n0  n1  (:goal (and (contains shot1 cocktail2))))
+	(n0  n2  (:goal (and (contains shot1 cocktail2))))
+	(n0  n3  (:goal (and (contains shot1 cocktail1))))
+	(n0  n6  (:goal (and (contains shot1 cocktail2))))
+    ...)
+)
+```
+
+> [!NOTE]
+> This APP-PDDL format is a much more improved and clean-up version of the original set of APP problems done for the PP-LPG solver in AIJ'16 paper. There, APP were specified with a collection of files for easier handling by the PP-LPG solver. Such format is not used here and the meta-solvers in this repo will translate APP-PDDL specification to formats relevant for them, including the one required for the PP-LPG solver.
+
+## Solver PP-FOND
+
+This tool provides a high-level interface for solving APPs (Agent Planning Problems) by translating to FOND (Fully Observable Non-Deterministic) problems. 
+
+The entry point to the solver is `src/python/pp-fond.py`
 
 ### Usage
 Positional Arguments
@@ -153,12 +203,17 @@ $ python src/python/pp-lpg.py ./benchmarks/AIJ16/BlocksWorld/domain.pddl ./bench
 2025-05-15 15:51:34 pacman04 APP-LPG [INFO] LPG Solve Time: 8.453671073017176
 2025-05-15 15:51:34 pacman04 __main__[129473] INFO Time taken: 8.739954399003182.
 ```
+
+## Other publications on APP
+
 ## Contributors
 
-- Prof. Sebastian Sardina
-- Dr. Nitin Yadav
+The repo is maintained by Nitin Yadav and Sebastian Sardina (ssardina@gmail.com).
+
+The 
+
 - Prof. Hector Geffner
 -  Alessandro Saiettei.
--  ..Fabio..
--  Giuseppe
+-  Fabio Patrizi
+-  Giuseppe De Giacomo
 -  Alfonso
