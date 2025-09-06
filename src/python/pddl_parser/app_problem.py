@@ -85,20 +85,20 @@ class APPProblem(Problem):
         result = f"(define (planprog {self.name})"
         body = f"(:domain {self.domain_name})\n"
         indentation = " " * 4
-        body += _sort_and_print_collection("(:requirements ", self.requirements, ")\n")
+        body += sort_and_print_collection("(:requirements ", self.requirements, ")\n")
         if self.objects:
-            body += _print_constants("(:objects", self.objects, ")\n")
-        body += _sort_and_print_collection("(:init ", self.init, ")\n", is_mandatory=True)
+            body += print_constants("(:objects", self.objects, ")\n")
+        body += sort_and_print_collection("(:init ", self.init, ")\n", is_mandatory=True)
         body += f"{'(:metric ' + str(self.metric) + ')'}\n" if self.metric else ""
 
         body += f"{'(:init-app ' + self.init_app + ')'}\n"
 
-        body += _sort_and_print_collection(
+        body += sort_and_print_collection(
             "(:transitions \n ", self.transitions, ")\n", is_mandatory=True
         )
 
         result = result + "\n" + indent(body, indentation) + "\n)"
-        result = _remove_empty_lines(result)
+        result = remove_empty_lines(result)
         return result
 
 class Transition:

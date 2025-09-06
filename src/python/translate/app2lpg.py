@@ -13,7 +13,7 @@ from pddl.logic import Predicate
 from pddl import parse_domain
 from pddl.core import Domain, Action
 from pddl.formatter import domain_to_string
-from pddl.formatter import _print_constants
+from pddl.formatter import print_constants
 
 from pddl_parser.app_problem import APPProblem, Transition
 from pddl_parser import parse_app_problem
@@ -78,7 +78,7 @@ def pddl2lpg(domain_file: str, problem_file: str, output_dir: str):
     if len(problem.requirements) > 0:
         result += "\t(:requirements " + " ".join(sorted(problem.requirements)) + ")\n"
     if len(problem.objects) > 0:
-        result += "\t" + _print_constants("(:objects", problem.objects, ")\n")
+        result += "\t" + print_constants("(:objects", problem.objects, ")\n")
     with open(os.path.join(output_dir, OBJ_FILE), "w+") as f:
             print(result, file=f)
 
