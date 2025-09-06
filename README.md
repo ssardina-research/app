@@ -16,6 +16,8 @@ Two solvers are provided:
 1. [**PP-FOND**](#pp-fond): solves an APP problem by translating it to a  FOND problem under strong-cyclic solution concept. This translation was first reported in ICAPS'25 paper above.
 2. [**PP-LPG**](#pp-lpg): solves an APP by repetitively calling a (modified version of) classical planner [LPG](http://zeus.ing.unibs.it/lpg/), a local search preference-based planning system, to build a whole solution for the APP task. This technique was introduced in the AIJ'16 paper above.
 
+The tools in this repo rely, and extend, package [pddl](https://github.com/AI-Planning/pddl) for parsing PDDL files. Make sure it is installed via `pip`. Tested with version 0.4.3.
+
 ## Benchmarks and APP input format
 
 A set of benchmarks is provided under [benchmarks](benchmarks/). Each set of problems come from different publications. Refer to the [README.md](benchmarks/README.md) in that folder for details.
@@ -83,8 +85,8 @@ The default planner used is PRP, but you can select which one to use via  `--pla
 For example:
 
 ```bash
-$ python ./src/python/pp-fond.py --planner pr2 --output ./output
-    ./benchmarks/AIJ16/BlocksWorld/domain.pddl ./benchmarks/AIJ16/BlocksWorld/RND6/prob001.pddl
+$ python ./src/python/pp-fond.py --planner pr2 --output ./output \
+ ./benchmarks/AIJ16/BlocksWorld/domain.pddl ./benchmarks/AIJ16/BlocksWorld/RND6/prob001.pddl
 
 .
 .
@@ -145,24 +147,25 @@ The Python script first translates an APP-PDDL input to a format that the LPG-ba
 The entry point to the solver is `src/python/pp-lpg.py`
 
 ```bash
-$ python src/python/pp-lpg.py ./benchmarks/AIJ16/BlocksWorld/domain.pddl ./benchmarks/AIJ16/BlocksWorld/RND6/prob001.pddl
+$ python src/python/pp-lpg.py \
+  ./benchmarks/AIJ16/BlocksWorld/domain.pddl ./benchmarks/AIJ16/BlocksWorld/RND6/prob001.pddl
 
 .
 .
 .
-2025-05-15 15:51:34 pacman04 APP-LPG [SOLVER] # Size of solution (number of plans): 9
-2025-05-15 15:51:34 pacman04 APP-LPG [SOLVER] ####### CURRENT GRAPH - END #######
-2025-05-15 15:51:34 pacman04 APP-LPG [SOLVER]
-2025-05-15 15:51:34 pacman04 APP-LPG [SOLVER]
-2025-05-15 15:51:34 pacman04 APP-LPG [SOLVER] List of current flaw:
-2025-05-15 15:51:34 pacman04 APP-LPG [SOLVER] No flaws
-2025-05-15 15:51:34 pacman04 APP-LPG [SOLVER] SUCCESS!
-2025-05-15 15:51:34 pacman04 APP-LPG [SOLVER] Size of policy solution (as number of plans): 9
-2025-05-15 15:51:34 pacman04 APP-LPG [SOLVER]
-2025-05-15 15:51:34 pacman04 APP-LPG [INFO] Found a policy of size (no of plans): 9
-2025-05-15 15:51:34 pacman04 APP-LPG [INFO] Found a policy of size (no of actions): 18
-2025-05-15 15:51:34 pacman04 APP-LPG [INFO] LPG Solve Time: 8.453671073017176
-2025-05-15 15:51:34 pacman04 __main__[129473] INFO Time taken: 8.739954399003182.
+2025-05-15 15:51:34  APP-LPG [SOLVER] # Size of solution (number of plans): 9
+2025-05-15 15:51:34  APP-LPG [SOLVER] ####### CURRENT GRAPH - END #######
+2025-05-15 15:51:34  APP-LPG [SOLVER]
+2025-05-15 15:51:34  APP-LPG [SOLVER]
+2025-05-15 15:51:34  APP-LPG [SOLVER] List of current flaw:
+2025-05-15 15:51:34  APP-LPG [SOLVER] No flaws
+2025-05-15 15:51:34  APP-LPG [SOLVER] SUCCESS!
+2025-05-15 15:51:34  APP-LPG [SOLVER] Size of policy solution (as number of plans): 9
+2025-05-15 15:51:34  APP-LPG [SOLVER]
+2025-05-15 15:51:34  APP-LPG [INFO] Found a policy of size (no of plans): 9
+2025-05-15 15:51:34  APP-LPG [INFO] Found a policy of size (no of actions): 18
+2025-05-15 15:51:34  APP-LPG [INFO] LPG Solve Time: 8.453671073017176
+2025-05-15 15:51:34  __main__[129473] INFO Time taken: 8.739954399003182.
 ```
 
 ## Other publications on APP
