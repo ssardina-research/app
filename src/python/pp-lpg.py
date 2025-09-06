@@ -24,6 +24,7 @@ from timeit import default_timer as timer
 SOLVER = SolverType.LPG
 SEED = 8888
 SOLVER_BIN = "pp-lpg"
+SOLVER_BINS = ["pp-lpg", "pp-lpg-small", "pp-lpg-nopref", "pp-lpg-adapt"]
 TIMEOUT = 30 * 60  # 30 minutes
 OUTPUT_DIR = None
 QUIET = False
@@ -157,6 +158,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--solver",
         default=SOLVER_BIN,
+        choices=SOLVER_BINS,
         type=str,
         help="PP-LPG solver version to use (Default: %(default)s).",
     )

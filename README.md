@@ -151,7 +151,7 @@ This solver implements a meta-search on the APP graph on top of a classical plan
 
 * Giuseppe De Giacomo, Alfonso Emilio Gerevini, Fabio Patrizi, Alessandro Saetti, Sebastian Sardiña: [Agent planning programs](https://linkinghub.elsevier.com/retrieve/pii/S0004370215001563). Artificial Intelligence 231: 64-106 (2016)
 
-The Python script first translates an APP-PDDL input to a format that the LPG-based APP solver accepts, and then call the LPG-based solver.
+The Python script first translates an APP-PDDL input to a format that the LPG-based APP solver accepts, and then call the LPG-based APP solver (which is provided in binary format under folder `bin/`).
 
 The entry point to the solver is `src/python/pp-lpg.py`
 
