@@ -61,9 +61,11 @@ For example, an APP for the Barman domain is as follows:
 > [!NOTE]
 > This APP-PDDL format is a much more improved and clean-up version of the original set of APP problems done for the PP-LPG solver in AIJ'16 paper. There, APP were specified with a collection of files for easier handling by the PP-LPG solver. Such format is not used here and the meta-solvers in this repo will translate APP-PDDL specification to formats relevant for them, including the one required for the PP-LPG solver.
 
-## Solver PP-FOND
+## PP-FOND: APP via FOND Planning
 
-This tool provides a high-level interface for solving APPs (Agent Planning Problems) by translating to FOND (Fully Observable Non-Deterministic) problems.
+This tool provides a high-level interface for solving APPs (Agent Planning Problems) by translating to FOND (Fully Observable Non-Deterministic) problems. It implements the technique in:
+
+* Nitin Yadav, Sebastian Sardina, Hector Geffner: [Agent Planning Programs as Non-deterministic Planning under Fairness](https://icaps25.icaps-conference.org/). ICAPS 2025, Melbourne, AUSTRALIA.
 
 The entry point to the solver is script `src/python/pp-fond.py`. The script will first translate the APP task into a FOND planning problem and call a FOND planner to solve it. Currently, the solver supports the following FOND planners:
 
@@ -131,40 +133,16 @@ $ python ./src/python/pp-fond.py ./benchmarks/AIJ16/BlocksWorld/domain.pddl ./be
 2025-05-15 13:43:52 3330L-212245-M __main__[56338] INFO Time taken (wall): 0.3503777500009164.
 ```
 
+## PP-LPG: APPs via Classical Planning
 
-## PP-LPG
+This solver implements a meta-search on the APP graph on top of a classical planner, as described in:
 
-This tool provides a high-level interface for working with APP (Agent Planning Problems) using the LPG planner. It supports translating APP problems to a format that the LPG solver accepts, and solving them the LPG planner. The entry point to the solver is `src/python/pp-lpg.py`
+* Giuseppe De Giacomo, Alfonso Emilio Gerevini, Fabio Patrizi, Alessandro Saetti, Sebastian Sardiña: [Agent planning programs](https://linkinghub.elsevier.com/retrieve/pii/S0004370215001563). Artificial Intelligence 231: 64-106 (2016)
 
-### Usage
-Positional Arguments
+The Python script first translates an APP-PDDL input to a format that the LPG-based APP solver accepts, and then call the LPG-based solver. 
 
-    domain: The domain PDDL file.
+The entry point to the solver is `src/python/pp-lpg.py`
 
-    problem: The APP problem input.
-Optional Arguments
-
---mode: Specifies the functionality of the system. Options are:
-
-        translate: Translate APP problem to LPG inputs.
-
-        solve (default): Solve the APP problem using LPG.
-
-    --timeout:
-    Timeout in seconds per run. Default: 1800 seconds (30 minutes).
-
-    --seed:
-    Random seed to control the behavior of the LPG planner.
-
-    --solver:
-    Path to the LPG solver binary or version to use. Default: pp-lpg.
-
-    --output:
-    Path to the directory where outputs (e.g., plans, logs) will be saved.
-
-    -q, --quiet:
-    Enable quiet mode, limiting output to essential information only.
-### Example
 ```bash
 $ python src/python/pp-lpg.py ./benchmarks/AIJ16/BlocksWorld/domain.pddl ./benchmarks/AIJ16/BlocksWorld/RND6/prob001.pddl
 
