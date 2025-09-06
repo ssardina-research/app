@@ -63,14 +63,14 @@ For example, an APP for the Barman domain is as follows:
 
 ## Solver PP-FOND
 
-This tool provides a high-level interface for solving APPs (Agent Planning Problems) by translating to FOND (Fully Observable Non-Deterministic) problems. 
+This tool provides a high-level interface for solving APPs (Agent Planning Problems) by translating to FOND (Fully Observable Non-Deterministic) problems.
 
 The entry point to the solver is `src/python/pp-fond.py`
 
 ### Usage
 Positional Arguments
 
-    domain: The domain PDDL file. 
+    domain: The domain PDDL file.
 
     problem: The APP problem file.
 
@@ -107,46 +107,46 @@ $ python ./src/python/pp-fond.py ./benchmarks/AIJ16/BlocksWorld/domain.pddl ./be
 .
 .
 .
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] 
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] 
+2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
+2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]             -----------------------------------
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]                   { General Statistics }
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]             -----------------------------------
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] 
+2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]                          Time taken: 0.00317824 sec
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]                            # Rounds: 1
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]                     # Weak Searches: 9
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]                       Solution Size: 24
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]                           FSAP Size: 0
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]                        Poison Count: 0
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] 
+2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] -------------------------------------------------------------------
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] 
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] 
+2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
+2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] Running the simulation...
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] 
+2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]             --------------------------------------
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]                   { Simulation Statistics }
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]             --------------------------------------
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] 
+2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]                           Trials: 100
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]                            Depth: 1000
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]                          Success: 100        (100.00 %)
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]                         Failures: 0  (0.00 %)
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] 
+2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]  Failures due to unhandled state: 0  (nan %)
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]      Failures due to depth limit: 0  (nan %)
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] 
+2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]       Mean successful run length: 6.13
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]   Mean (state-)failed run length: 0.00
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] 
+2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] -------------------------------------------------------------------
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] 
+2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] Dumping the policy and fsaps...
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] 
+2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] Peak memory: 410099632 KB
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] Command '['/Users/nitiny/Tools/Planners/prp2/pr2/builds/release64/bin/downward', '--search', 'prpsearch()', '--internal-plan-file', 'sas_plan']' returned non-zero exit status 9.
-2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER] 
+2025-05-15 13:43:52 3330L-212245-M APP-PR2 [SOLVER]
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [INFO] Found a policy of size: 24
 2025-05-15 13:43:52 3330L-212245-M APP-PR2 [INFO] FOND Solve Time: 0.2639072500169277
 2025-05-15 13:43:52 3330L-212245-M __main__[56338] INFO Time taken (wall): 0.3503777500009164.
@@ -172,7 +172,7 @@ Optional Arguments
     Timeout in seconds per run. Default: 1800 seconds (30 minutes).
 
     --seed:
-    Random seed to control the behavior of the LPG planner. 
+    Random seed to control the behavior of the LPG planner.
 
     --solver:
     Path to the LPG solver binary or version to use. Default: pp-lpg.
@@ -184,20 +184,20 @@ Optional Arguments
     Enable quiet mode, limiting output to essential information only.
 ### Example
 ```bash
-$ python src/python/pp-lpg.py ./benchmarks/AIJ16/BlocksWorld/domain.pddl ./benchmarks/AIJ16/BlocksWorld/RND6/prob001.pddl                  
+$ python src/python/pp-lpg.py ./benchmarks/AIJ16/BlocksWorld/domain.pddl ./benchmarks/AIJ16/BlocksWorld/RND6/prob001.pddl
 
 .
 .
 .
 2025-05-15 15:51:34 pacman04 APP-LPG [SOLVER] # Size of solution (number of plans): 9
 2025-05-15 15:51:34 pacman04 APP-LPG [SOLVER] ####### CURRENT GRAPH - END #######
-2025-05-15 15:51:34 pacman04 APP-LPG [SOLVER] 
-2025-05-15 15:51:34 pacman04 APP-LPG [SOLVER] 
+2025-05-15 15:51:34 pacman04 APP-LPG [SOLVER]
+2025-05-15 15:51:34 pacman04 APP-LPG [SOLVER]
 2025-05-15 15:51:34 pacman04 APP-LPG [SOLVER] List of current flaw:
 2025-05-15 15:51:34 pacman04 APP-LPG [SOLVER] No flaws
 2025-05-15 15:51:34 pacman04 APP-LPG [SOLVER] SUCCESS!
 2025-05-15 15:51:34 pacman04 APP-LPG [SOLVER] Size of policy solution (as number of plans): 9
-2025-05-15 15:51:34 pacman04 APP-LPG [SOLVER] 
+2025-05-15 15:51:34 pacman04 APP-LPG [SOLVER]
 2025-05-15 15:51:34 pacman04 APP-LPG [INFO] Found a policy of size (no of plans): 9
 2025-05-15 15:51:34 pacman04 APP-LPG [INFO] Found a policy of size (no of actions): 18
 2025-05-15 15:51:34 pacman04 APP-LPG [INFO] LPG Solve Time: 8.453671073017176
@@ -210,7 +210,7 @@ $ python src/python/pp-lpg.py ./benchmarks/AIJ16/BlocksWorld/domain.pddl ./bench
 
 The repo is maintained by Nitin Yadav and Sebastian Sardina (ssardina@gmail.com).
 
-The 
+The
 
 - Prof. Hector Geffner
 -  Alessandro Saiettei.
