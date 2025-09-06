@@ -19,13 +19,18 @@ Two solvers are provided:
 The tools in this repo rely, and extend, package [pddl](https://github.com/AI-Planning/pddl) for parsing PDDL files. Make sure it is installed via `pip`. Tested with version 0.4.3.
 
 - [Agent Planning Programs](#agent-planning-programs)
-  - [Benchmarks and APP input format](#benchmarks-and-app-input-format)
+  - [Setup](#setup)
+  - [APP-PDDL input format and benchmarks](#app-pddl-input-format-and-benchmarks)
   - [PP-FOND: APP via FOND Planning](#pp-fond-app-via-fond-planning)
   - [PP-LPG: APPs via Classical Planning](#pp-lpg-apps-via-classical-planning)
   - [Other related solvers and tools](#other-related-solvers-and-tools)
   - [Contributors](#contributors)
 
-## Benchmarks and APP input format
+## Setup
+
+
+
+## APP-PDDL input format and benchmarks
 
 A set of benchmarks is provided under [benchmarks](benchmarks/). Each set of problems come from different publications. Refer to the [README.md](benchmarks/README.md) in that folder for details.
 
