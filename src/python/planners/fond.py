@@ -100,13 +100,13 @@ class FondSolver(APPSolver):
     def _solve_prp(self):
         planner_args = clean_args(self.problem.extra_info["planner_args"])
         self.logger.info(f"Calling PRP with time limit of {self._solve_time_limit()}s.")
-        
+
         disable_invariant = self.problem.extra_info["disable_invariant"]
         if disable_invariant:
             _solver = self.SOLVER_PRP_INV0
         else:
             _solver = self.SOLVER_PRP
-            
+
         cmd = [
             _solver,
             self.fond_domain_file,
@@ -131,7 +131,7 @@ class FondSolver(APPSolver):
             _solver = self.SOLVER_PR2_INV0
         else:
             _solver = self.SOLVER_PR2
-            
+
         cmd = [
             _solver,
             self.fond_domain_file,
