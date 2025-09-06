@@ -28,6 +28,15 @@ The tools in this repo rely, and extend, package [pddl](https://github.com/AI-Pl
 
 ## Setup
 
+The front-end is a set of Python scripts, install the dependencies in `requirements.txt`.
+
+For the PP-LPG solver, the folder `bin/` containing binaries of the solver need to be in the `PATH`:
+
+```shell
+$ export PATH=$PATH:bin/
+```
+
+For the PP-FOND solver, you need to have the FOND planner system available in the `PATH`. One way to do that is to add a symbolic link to the `bin/` folder.
 
 
 ## APP-PDDL input format and benchmarks
