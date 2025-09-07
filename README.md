@@ -1,5 +1,7 @@
 # Agent Planning Programs
 
+![chatgpt idea of APPs!](app-logo-gh.jpg)
+
 Agent Planning Programs (APPs) are generalization of AI planning problems, in which instead of a single goal, the agent needs to solve a network of interconnected goals, the "planning program".
 
 Agent Planning Programs were first introduced at AAMAS'10 and then explored more at AIJ'16:
