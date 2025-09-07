@@ -195,9 +195,6 @@ $ python src/python/pp-lpg.py \
 Other articles report solvers or optimisations to solve APPs (not available in this repo).
 
 * [Porfirio HRI'25](https://ieeexplore.ieee.org/document/10973839/) develops the _Interaction Specification Language_ (ISL) to provide planning capabilities to robotic applications using goal graph-like structures very similar to APPs.
-* However, these languages are largely decoupled from robots' automated task planning capabilities, rendering developers unable to explicitly leverage their robot's ability to plan its own actions
-* 
-* , which enables de-velopers to import and apply elements from a robot planning do-main in a graph-based programming paradigm
 * [Falcone et. al SOCS'17](https://ojs.aaai.org/index.php/SOCS/article/view/18431) extends the LPG-based solver to reason across multiple sequential goals at once.
 * [Lukás Chrpa eta al IJCAI'17](https://www.ijcai.org/proceedings/2017/135), extend the LPG-based solver to predict dead-ends across goals and also proposes an online version of the problem.
 * [De Giacomo et al AAMAS'10](https://dl.acm.org/citation.cfm?id=1838276) proposes solving APPs via synthesis of LTL GR(1) specifications.
