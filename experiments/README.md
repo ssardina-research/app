@@ -4,17 +4,20 @@ Experiments were run on various benchmark sets and solvers.
 
 ## Solvers tested
 
-- [PP-LPG APP](https://github.com/ssardina-research/app-lpg) solver (as per AIJ16 paper) under two configurations:
+1. **PP-LPG**: the meta-search via call to classical planner LPG (as per AIJ'16 artcile) under two configurations:
   - `lpg`: standard configuration of solver for large problems.
   - `lpg_small`:  configuration of solver for small problems.
-- FOND encoding using [PRP](https://github.com/ssardina-research/planner-for-relevant-policies/):
-  - `prp`: with standard invariant set to 300s
-  - `prp_inv0`: with invariant extraction disabled
-- FOND encoding using [PR2 FOND planner] (the new version of PRP):
-  - `prp2`: with standard invariant set to 300s
-  - `prp2_inv0`: with invariant extraction disabled
-- FOND encoding using [Paladinus FOND planner](https://github.com/ssardina-research/paladinus):
-  - `paladinus`: used with the reported optimnal configuration: `-search ITERATIVE_DFS_PRUNING -heuristic HADD -actionSelectionCriterion MIN_MAX_H -evaluationFunctionCriterion MAX` and 1.5Gb of heap RAM (`-Xmx1500m`).
+2. **PP-FOND**: reduction of APP to FOND planning under strong-fairness assumption (as reported in ICAPS'25). Three planners were tested:
+   1. [PRP](https://github.com/ssardina-research/planner-for-relevant-policies/) in two modes for the translation step:
+     - `prp`: with standard invariant set to 300s
+     - `prp_inv0`: with invariant extraction disabled
+   2. [PR2](https://mulab.ai/project/pr2/): the new version of PRP, also with the same two settings on the pre-processing translation:
+     - `prp2`: with standard invariant set to 300s
+     - `prp2_inv0`: with invariant extraction disabled
+   3. [Paladinus](https://github.com/ssardina-research/paladinus): a depth-first search FOND planner.
+     - We use the following recommended configuration:
+        - planner: `-search ITERATIVE_DFS_PRUNING -heuristic HADD -actionSelectionCriterion MIN_MAX_H -evaluationFunctionCriterion MAX`
+        - Java: 1.5Gb of heap RAM via option `-Xmx1500m`.
 
 ## Resources
 
@@ -47,7 +50,7 @@ We can do all that as follows:
 ```shell
 $ python -m venv ~/my_virtualenv/app
 $ source ~/virtualenv/app/bin/activate
-$ pip install -r requirements_extra.txt   # this will install Benchexec 
+$ pip install -r requirements_extra.txt   # this will install Benchexec
 
 $ which benchexec # confirm it was installed correctly
 /home/ssardina/virtualenv/app/bin/benchexec
@@ -86,7 +89,7 @@ Results from Benchexec can be found under the folder [results](./results/).
 
 Analysis was done via jupyter notebook [analysis_benchexec](../analysis_benchexec.ipynb), and plotting was done both in R and Jupyter.
 
-The notebook can read many Benchexec CSV result files (obtained via `table-generator` as above) into a single Pandas Dataframe for statistical analysis and plotting. Just make sure all CSV files `results_XXX.csv` are in the same folder and the notebook will load them all. 
+The notebook can read many Benchexec CSV result files (obtained via `table-generator` as above) into a single Pandas Dataframe for statistical analysis and plotting. Just make sure all CSV files `results_XXX.csv` are in the same folder and the notebook will load them all.
 
 Remember that in every result CSV file, many tasks (e.g., instances) could have been tested against different _**runs**_ (e.g., solver configurations within the same tool), like `prp` and `prp_inv0`, or `lpg` and `lpg_small`. Each run will have its result in own columns (for the same set of tasks). So, the notebook reshapes all those columns to make the run names (e.g., `prp` or `lpg_small`) a single `run` column identifying both the solver and its variant configuration. This makes dataframes much more amenable for analysis. The notebook writes collected results to a file called `results.csv` in the results folder.
 

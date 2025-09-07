@@ -38,7 +38,6 @@ $ export PATH=$PATH:bin/
 
 For the PP-FOND solver, you need to have the FOND planner system available in the `PATH`. One way to do that is to add a symbolic link to the `bin/` folder.
 
-
 ## APP-PDDL input format and benchmarks
 
 A set of benchmarks is provided under [benchmarks](benchmarks/). Each set of problems come from different publications. Refer to the [README.md](benchmarks/README.md) in that folder for details.
