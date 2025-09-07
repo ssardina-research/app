@@ -1,6 +1,6 @@
 # Experiments
 
-Experiments were run on various benchmark sets and solvers.
+Experiments were run on various benchmark sets and solvers, and using the [Benchexec](https://github.com/sosy-lab/benchexec) experimental workbench.
 
 ## Solvers tested
 
@@ -35,7 +35,7 @@ Benchmarks used under `benchmarks/`:
 
 ## How it was run via Benchexec
 
-We used Benchexec framework; see [BENCHMARKING.md](../BENCHMARKING.md) for details.
+We used [Benchexec](https://github.com/sosy-lab/benchexec) framework; see [BENCHEXEC.md](BENCHEXEC.md) for details.
 
 Benchexec configurations are under [benchexe/](/benchexe/).
 
@@ -85,9 +85,10 @@ After Bechexec completes all the tasks for a benchmark, the results are left as 
 This will generate a CSV and HTML files with all results of the experiment.
 
 ## Result Analysis & Plotting
+
 Results from Benchexec can be found under the folder [results](./results/).
 
-Analysis was done via jupyter notebook [analysis_benchexec](../analysis_benchexec.ipynb), and plotting was done both in R and Jupyter.
+Analysis was done via Jupyter notebook [analysis_benchexec](analysis_benchexec.ipynb), and plotting was done both in R and Jupyter.
 
 The notebook can read many Benchexec CSV result files (obtained via `table-generator` as above) into a single Pandas Dataframe for statistical analysis and plotting. Just make sure all CSV files `results_XXX.csv` are in the same folder and the notebook will load them all.
 
