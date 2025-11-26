@@ -10,7 +10,7 @@ They were first introduced at AAMAS'10 and then explored more at AIJ'16:
 
 This repo has a set of _solvers_, _benchmarks_, and _scripts_ for APPS, as reported in:
 
-* Nitin Yadav, Sebastian Sardina, Hector Geffner: [Agent Planning Programs as Non-deterministic Planning under Fairness](https://icaps25.icaps-conference.org/). ICAPS 2025, Melbourne, AUSTRALIA.
+* Nitin Yadav, Sebastian Sardina, Hector Geffner: [Agent Planning Programs as Non-deterministic Planning under Fairness](https://ojs.aaai.org/index.php/ICAPS/article/view/36138). [ICAPS 2025](https://icaps25.icaps-conference.org/), Melbourne, AUSTRALIA.
 
 Two solvers are provided:
 
